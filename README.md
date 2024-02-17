@@ -12,6 +12,7 @@ pip install flask sentence-transformers
 1.Clone the repository:
 
 git clone [https://github.com/your-username/symetic-similarity](https://github.com/Imharsh08/symetic-similarity.git)
+
 cd symetic-similarity
 
 ## Run the Flask app:
