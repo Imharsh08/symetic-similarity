@@ -11,7 +11,7 @@ pip install flask sentence-transformers
 ## Usage
 1.Clone the repository:
 
-git clone https://github.com/your-username/sentence-similarity-calculator.git
+git clone https://github.com/your-username/symetic-similarity
 cd sentence-similarity-calculator
 
 ## Run the Flask app:
