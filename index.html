@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semantic Similarity Score App</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container mt-5">
+    <h1 class="mb-4">Semantic Similarity Score App</h1>
+    <form method="post" action="{{ url_for('calculate_similarity') }}">
+        <div class="form-group">
+            <label for="sentence1">Text 1:</label>
+            <input type="text" class="form-control" id="sentence1" name="sentence1" required>
+        </div>
+    
+        <div class="form-group">
+            <label for="sentence2">Text 2:</label>
+            <input type="text" class="form-control" id="sentence2" name="sentence2" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Calculate Similarity</button>
+    </form>
+
+    {% if result %}
+    <div class="mt-4">
+        <h4>Result:</h4>
+        <p>Similarity Score: {{ result.similarity_score|round(4) }}</p>
+        <table>
+            <tr>
+                <th>Text 1:</th>
+                <th>Text 2:</th>
+            </tr>
+            <tr>
+                <td>{{ result.sentence1 }}</td>
+                <td>{{ result.sentence2 }}</td>
+            </tr>
+        </table>
+    </div>
+    {% endif %}
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
